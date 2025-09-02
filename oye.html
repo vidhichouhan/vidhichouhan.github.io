@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Test Page</title>
+    <title>For My Love</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -14,349 +14,163 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-            padding: 20px;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+            background-size: 400% 400%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: gradient 15s ease infinite;
+            color: #6a3093;
+            overflow: hidden;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        
-        /* Typography */
-        h1, h2, h3, h4 {
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-        
-        p {
-            margin-bottom: 15px;
-        }
-        
-        /* Header */
-        header {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+            max-width: 600px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 2s ease;
+            position: relative;
+            overflow: hidden;
         }
         
-        /* Navigation */
-        nav {
-            margin: 20px 0;
-            background: #34495e;
-            border-radius: 5px;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
-        nav ul {
-            display: flex;
-            list-style: none;
-            flex-wrap: wrap;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #d64c7f;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
         
-        nav li {
-            flex-grow: 1;
+        .romantic-line {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin: 25px 0;
+            font-weight: 500;
+            font-style: italic;
+            position: relative;
         }
         
-        nav a {
-            display: block;
-            padding: 15px;
-            color: white;
-            text-decoration: none;
-            text-align: center;
-            transition: background 0.3s;
+        .romantic-line::before, .romantic-line::after {
+            content: '"';
+            font-size: 2rem;
+            color: #ff6b8b;
         }
         
-        nav a:hover {
-            background: #2c3e50;
+        .heart {
+            color: #ff6b8b;
+            font-size: 2rem;
+            margin: 0 10px;
+            animation: pulse 1.5s infinite;
         }
         
-        /* Section Styling */
-        section {
-            margin-bottom: 40px;
-            padding: 20px;
-            border-radius: 5px;
-            background: #fff;
-            border: 1px solid #eee;
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
         }
         
-        /* Form Styling */
-        .form-group {
-            margin-bottom: 15px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 5px;
+        .signature {
+            margin-top: 30px;
+            font-size: 1.8rem;
+            color: #d64c7f;
             font-weight: bold;
         }
         
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        select,
-        textarea {
+        .hearts-container {
+            position: absolute;
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
         }
         
-        button {
-            padding: 12px 20px;
-            background: #3498db;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
+        .heart-falling {
+            position: absolute;
+            color: rgba(255, 107, 139, 0.7);
+            font-size: 1.5rem;
+            top: -50px;
+            animation: fall 10s linear infinite;
         }
         
-        button:hover {
-            background: #2980b9;
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
         }
         
-        /* Table Styling */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        th {
-            background-color: #f2f2f2;
-        }
-        
-        tr:hover {
-            background-color: #f5f5f5;
-        }
-        
-        /* Color Swatches */
-        .color-swatches {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 20px 0;
-        }
-        
-        .color-swatch {
-            width: 100px;
-            height: 100px;
-            border-radius: 5px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-            }
-            
-            .color-swatch {
-                width: 80px;
-                height: 80px;
-            }
-        }
-        
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            color: #7f8c8d;
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .romantic-line { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Website Test Page</h1>
-            <p>This is a comprehensive test page for website development</p>
-        </header>
+        <h1>For My Beautiful Girlfriend</h1>
         
-        <nav>
-            <ul>
-                <li><a href="#typography">Typography</a></li>
-                <li><a href="#forms">Forms</a></li>
-                <li><a href="#tables">Tables</a></li>
-                <li><a href="#colors">Colors</a></li>
-                <li><a href="#media">Media</a></li>
-            </ul>
-        </nav>
+        <p class="romantic-line">
+            <i class="fas fa-heart heart"></i>
+            Every moment with you is like a beautiful dream come true
+            <i class="fas fa-heart heart"></i>
+        </p>
         
-        <section id="typography">
-            <h2>Typography</h2>
-            
-            <h1>Heading 1</h1>
-            <h2>Heading 2</h2>
-            <h3>Heading 3</h3>
-            <h4>Heading 4</h4>
-            
-            <p>This is a regular paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
-            
-            <p><strong>Bold text:</strong> Important information</p>
-            <p><em>Italic text:</em> Emphasized content</p>
-            <p><a href="#">This is a text link</a></p>
-            
-            <ul>
-                <li>Unordered list item 1</li>
-                <li>Unordered list item 2</li>
-                <li>Unordered list item 3</li>
-            </ul>
-            
-            <ol>
-                <li>Ordered list item 1</li>
-                <li>Ordered list item 2</li>
-                <li>Ordered list item 3</li>
-            </ol>
-        </section>
+        <p class="romantic-line">
+            <i class="fas fa-heart heart"></i>
+            Your love colors my world with happiness and joy
+            <i class="fas fa-heart heart"></i>
+        </p>
         
-        <section id="forms">
-            <h2>Form Elements</h2>
-            
-            <form>
-                <div class="form-group">
-                    <label for="text-input">Text Input</label>
-                    <input type="text" id="text-input" placeholder="Enter text">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email-input">Email Input</label>
-                    <input type="email" id="email-input" placeholder="Enter email">
-                </div>
-                
-                <div class="form-group">
-                    <label for="password-input">Password Input</label>
-                    <input type="password" id="password-input" placeholder="Enter password">
-                </div>
-                
-                <div class="form-group">
-                    <label for="select-input">Select Dropdown</label>
-                    <select id="select-input">
-                        <option value="">Select an option</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="textarea">Textarea</label>
-                    <textarea id="textarea" rows="4" placeholder="Enter longer text"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox"> Checkbox option
-                    </label>
-                </div>
-                
-                <div class="form-group">
-                    <label>
-                        <input type="radio" name="radio-group"> Radio option 1
-                    </label>
-                    <label>
-                        <input type="radio" name="radio-group"> Radio option 2
-                    </label>
-                </div>
-                
-                <button type="submit">Submit Button</button>
-                <button type="button">Regular Button</button>
-            </form>
-        </section>
+        <p class="romantic-line">
+            <i class="fas fa-heart heart"></i>
+            I fall for you more and more every single day
+            <i class="fas fa-heart heart"></i>
+        </p>
         
-        <section id="tables">
-            <h2>Tables</h2>
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>John Doe</td>
-                        <td>john@example.com</td>
-                        <td>Admin</td>
-                    </tr>
-                    <tr>
-                        <td>Jane Smith</td>
-                        <td>jane@example.com</td>
-                        <td>Editor</td>
-                    </tr>
-                    <tr>
-                        <td>Bob Johnson</td>
-                        <td>bob@example.com</td>
-                        <td>Author</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <p class="romantic-line">
+            <i class="fas fa-heart heart"></i>
+            You are the missing piece I never knew I needed
+            <i class="fas fa-heart heart"></i>
+        </p>
         
-        <section id="colors">
-            <h2>Color Palette</h2>
-            
-            <div class="color-swatches">
-                <div class="color-swatch" style="background-color: #3498db;">
-                    <span>Primary</span>
-                    <span>#3498db</span>
-                </div>
-                <div class="color-swatch" style="background-color: #2ecc71;">
-                    <span>Success</span>
-                    <span>#2ecc71</span>
-                </div>
-                <div class="color-swatch" style="background-color: #e74c3c;">
-                    <span>Danger</span>
-                    <span>#e74c3c</span>
-                </div>
-                <div class="color-swatch" style="background-color: #f39c12;">
-                    <span>Warning</span>
-                    <span>#f39c12</span>
-                </div>
-                <div class="color-swatch" style="background-color: #34495e; color: white;">
-                    <span>Dark</span>
-                    <span>#34495e</span>
-                </div>
-            </div>
-        </section>
+        <p class="signature">Forever Yours</p>
         
-        <section id="media">
-            <h2>Media Elements</h2>
-            
-            <h3>Image</h3>
-            <img src="https://via.placeholder.com/800x400" alt="Placeholder Image" style="max-width: 100%; height: auto;">
-            
-            <h3>Responsive Iframe</h3>
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 20px 0;">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
-            </div>
-        </section>
-        
-        <footer>
-            <p>Test Page for Website Development | Created for testing purposes</p>
-        </footer>
+        <div class="hearts-container" id="hearts-container"></div>
     </div>
+
+    <script>
+        // Create falling hearts
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts-container');
+            const heartTypes = ['❤️', '💖', '💕', '💘', '💓', '💗'];
+            
+            for (let i = 0; i < 15; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-falling';
+                heart.innerHTML = heartTypes[Math.floor(Math.random() * heartTypes.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDuration = (Math.random() * 10 + 5) + 's';
+                heart.style.opacity = Math.random() * 0.5 + 0.3;
+                heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
+                heartsContainer.appendChild(heart);
+            }
+        }
+        
+        createHearts();
+    </script>
 </body>
 </html>
